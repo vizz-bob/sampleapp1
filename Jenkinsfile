@@ -27,6 +27,21 @@ pipeline {
                     docker.withRegistry('', 'dockerhub-credentials-id') {
                         docker.image(DOCKER_IMAGE).push()
                     }
+                    pipeline {
+    agent any
+    tools {
+        maven 'Maven 3.8.6' // The name you configured in Global Tool Configuration
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        // rest of pipeline
+    }
+}
+
                 }
             }
         }
