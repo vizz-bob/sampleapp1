@@ -1,39 +1,31 @@
 pipeline {
     agent any
-
+    environment {
+        DOCKER_IMAGE = "vizzbob/sampleapp1:4"
+    }
     stages {
         stage('Checkout') {
             steps {
-                echo "Code already checked out by Jenkins SCM"
+                checkout scm
             }
         }
-
+        stage('Build') {
+            steps {
+                echo "Building the app with Maven"
+                sh 'mvn clean package'
+            }
+        }
         stage('Build Docker Image') {
             steps {
-                script {
-                    dockerImage = docker.build("vizzbob/sampleapp1:${env.BUILD_NUMBER}")
-                }
+                echo "Building Docker image"
+                sh "docker build -t ${DOCKER_IMAGE} ."
             }
         }
-
-        stage('Test') {
-            steps {
-                script {
-                    dockerImage.inside {
-                        sh 'echo "Running tests..."'
-                    }
-                }
-            }
-        }
-
         stage('Push Docker Image') {
-            when {
-                branch 'master'
-            }
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub-credentials', url: '') {
-                    script {
-                        dockerImage.push()
+                script {
+                    docker.withRegistry('', 'dockerhub-credentials-id') {
+                        docker.image(DOCKER_IMAGE).push()
                     }
                 }
             }
