@@ -223,7 +223,6 @@
 		</executions>
 	    </plugin>
         </plugins>
-	<finalName>sampleapp</finalName>
     </build>  
     <reporting>
     <plugins>
