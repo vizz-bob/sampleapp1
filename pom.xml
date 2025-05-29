@@ -298,7 +298,7 @@
                                     <artifactId>maven-jxr-plugin</artifactId>
                                     <version>2.4</version>
                                 </plugin>
-   </reporting>
+   	</reporting>
   
       <profiles>
         <profile>
