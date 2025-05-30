@@ -9,7 +9,7 @@
     <packaging>war</packaging>
     <version>2.0</version>
     <name>Vaadin Sampleapp example</name>
-    <properties>  
+    <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>
         false</failOnMissingWebXml>
