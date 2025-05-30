@@ -22,8 +22,8 @@
     <repositories>
         <repository>
             <id>vaadin-prereleases</id>
-            <name>Vaadin Pre-releases</name>  <url
-            >https://maven.vaadin.com/vaadin-prereleases</url>
+            <name>Vaadin Pre-releases</name>
+	    <url>https://maven.vaadin.com/vaadin-prereleases</url>
         </repository>
         <!-- Essential Vaadin artifacts are in maven central, but maven.vaadin.com 
             contains a huge set of additional libraries. See vaadin.com/directory -->
