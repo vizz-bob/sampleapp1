@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project
     xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -10,20 +10,20 @@
     <version>2.0</version>
     <name>Vaadin Sampleapp example</name>
     <properties>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>
-        false</failOnMissingWebXml>
+            false</failOnMissingWebXml>
         <vaadin.version>8.0.0.alpha2</vaadin.version>
         <vaadin.plugin.version>
-        ${vaadin.version}</vaadin.plugin.version>
-	<jacoco.version>0.8.6</jacoco.version>
+            ${vaadin.version}</vaadin.plugin.version>
+        <jacoco.version>0.8.6</jacoco.version>
     </properties>
 
     <repositories>
         <repository>
             <id>vaadin-prereleases</id>
             <name>Vaadin Pre-releases</name>
-	    <url>https://maven.vaadin.com/vaadin-prereleases</url>
+            <url>https://maven.vaadin.com/vaadin-prereleases</url>
         </repository>
         <!-- Essential Vaadin artifacts are in maven central, but maven.vaadin.com 
             contains a huge set of additional libraries. See vaadin.com/directory -->
@@ -33,8 +33,7 @@
         </repository>
         <repository>
             <id>vaadin-snapshots</id>
-            <url
-            >http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -47,8 +46,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>vaadin-snapshots</id>
-            <url
-            >http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -231,6 +229,7 @@
         </plugins>
     </build>
     <reporting>
+        <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-report-plugin</artifactId>
@@ -303,6 +302,7 @@
             <artifactId>maven-jxr-plugin</artifactId>
             <version>2.4</version>
         </plugin>
+        </plugins>
     </reporting>
 
     <profiles>
@@ -477,8 +477,7 @@
                         <artifactId>maven-checkstyle-plugin</artifactId>
                         <version>2.9.1</version>
                         <configuration>
-                            <configLocation
-                            >sampleapp-build/checkstyle.xml</configLocation>
+                            <configLocation>sampleapp-build/checkstyle.xml</configLocation>
                         </configuration>
                     </plugin>
                     <plugin>
